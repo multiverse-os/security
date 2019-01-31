@@ -1,6 +1,7 @@
 # Shodan Search
-Very quick library and example of searching shodan for values, exposing a major issue with the current state of many p2p networks which turn on exploitable RPCs by default.  Hoping making this easy to use will bring some light to the situation and help push developers in a more secure design direction istead of making the same mistakes over and over. 
+Very quick library and example of searching `shodan.io` for values, exposing a major issue with the current state of many p2p networks which very stupidly turn on highly exploitable RPCs by default.
 
+Hoping by making this easy to use will bring some light to the situation and help push developers in a more secure design direction istead of making the same mistakes over and over and building insecure tools like many tools from the early internet. 
 
 Doesn't yet support login but that would be desirable for more complex search parameters. So maybe in the future. 
 
@@ -8,4 +9,4 @@ Doesn't yet support login but that would be desirable for more complex search pa
 ### Example
 Import and just call the single existing function:
 
-Look at the command for example usage but its just `shodan.Search("value")`.
+Look at the `cmd/ssearch` for example usage; but its just `shodan.Search("value")`.
