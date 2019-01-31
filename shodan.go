@@ -37,7 +37,8 @@ func New() *Shodan {
 func Login(username, password string) *Shodan {
 	shodan := New()
 	err := shodan.Page.Open("https://account.shodan.io/login")
-	fm, _ := shodan.Page.Form("form.login-form")
+	fm, _ := shodan.Page.Form("form")
+
 	fm.Input("username", username)
 	fm.Input("password", password)
 	if err != nil && fm.Submit() != nil {
