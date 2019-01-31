@@ -6,4 +6,6 @@ Doesn't yet support login but that would be desirable for more complex search pa
 
 
 ### Example
+Import and just call the single existing function:
+
 Look at the command for example usage but its just `shodan.Search("value")`.
