@@ -13,10 +13,17 @@ import (
 
 const DefaultPageLimit = 2
 
+type Server struct {
+	IP string
+	Ports []string
+	CVEs []string
+}
+
 type Shodan struct {
 	IPs []string
 	PageLimit int
 	Page *browser.Browser
+	Servers []*Server
 }
 
 func New() *Shodan {
