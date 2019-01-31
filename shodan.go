@@ -5,9 +5,10 @@ import (
 	"time"
 	"strconv"
 
-	"gopkg.in/headzoo/surf.v1"
+	surf "gopkg.in/headzoo/surf.v1"
 	browser "github.com/headzoo/surf/browser"
-	"github.com/PuerkitoBio/goquery"
+	agent "github.com/headzoo/surf/agent"
+	query "github.com/PuerkitoBio/goquery"
 
 )
 
@@ -27,11 +28,13 @@ type Shodan struct {
 }
 
 func New() *Shodan {
-	return &Shodan{
+	s := &Shodan{
 		IPs: []string{},
 		PageLimit: DefaultPageLimit,
 		Page: surf.NewBrowser(),
 	}
+	s.Page.SetUserAgent(agent.Firefox())
+	return s
 }
 
 func Login(username, password string) *Shodan {
@@ -55,7 +58,7 @@ func (self *Shodan) Search(value string) (ips []string, err error) {
 		err = self.Page.Open("https://www.shodan.io/search?query="+value+"&page="+strconv.Itoa(i))
 		if err != nil {
 			fmt.Println("[Error] Failed to connect to shodan, try again shortly...")
-			self.Page.Find("div.ip").Each(func(i int, element *goquery.Selection) {
+			self.Page.Find("div.ip").Each(func(i int, element *query.Selection) {
 				fmt.Print(element.Text())
 				ips = append(ips, element.Text())
 			})
