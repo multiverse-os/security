@@ -3,3 +3,7 @@ Very quick library and example of searching shodan for values, exposing a major 
 
 
 Doesn't yet support login but that would be desirable for more complex search parameters. So maybe in the future. 
+
+
+### Example
+Look at the command for example usage but its just `shodan.Search("value")`.
