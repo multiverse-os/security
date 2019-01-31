@@ -1,10 +1,12 @@
 package shodan
 
 import (
+	"fmt"
+	"strconv"
+
 	"gopkg.in/headzoo/surf.v1"
 	"github.com/PuerkitoBio/goquery"
 
-	"fmt"
 )
 
 
