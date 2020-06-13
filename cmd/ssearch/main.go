@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	. "github.com/lostinblue/shodan"
+	. "github.com/multiverse-os/security-toolkit/shodan"
 )
 
 func main() {
